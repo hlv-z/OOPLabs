@@ -6,31 +6,32 @@ namespace ConsoleApp1
 {
     class Train
     {
-        private string timeofarrival;
-        private string timeofdeparture;
+        private string timeOfArrival;
+        private string timeOfDeparture;
         public int NumberOfTrain { get; private set;}
         public string TimeOfArrival {
             get 
             { 
-                return timeofarrival; 
+                return timeOfArrival; 
             }
             private set 
             {
                 string[] time = value.Split(':' ,'-', ' ');
+
                 if (Convert.ToInt32(time[0]) > 24 || Convert.ToInt32(time[1]) > 60)
                 {
                     throw new Exception("Time is out of range"); 
                 }
                 else 
                 {
-                    timeofarrival = value;
+                    timeOfArrival = value;
                 }
             }
         }
         public string TimeOfDeparture {
             get 
             {
-                return timeofdeparture; 
+                return timeOfDeparture; 
             }
             private set
             {
@@ -41,7 +42,7 @@ namespace ConsoleApp1
                 }
                 else
                 {
-                    timeofdeparture = value;
+                    timeOfDeparture = value;
                 }
             }
         }
